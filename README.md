@@ -1,19 +1,19 @@
-node-quark-hash
+node-x11-hash
 ===============
 
-Quark hashing function for node.js. Useful for various cryptocurrencies.
+x11 hashing function for node.js. Useful for various cryptocurrencies.
 
 Usage
 -----
 
 Install
 
-    npm install quark-hash
+    npm install x11-hash
 
 
 Hash your data
 
-    var quark = require('quark-hash');
+    var quark = require('x11-hash');
 
     var data = new Buffer("hash me good bro");
     var hashed = quark.digest(data); //returns a 32 byte buffer
