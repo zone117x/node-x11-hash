@@ -112,7 +112,7 @@ be32dec_vect(uint32_t *dst, const unsigned char *src, size_t len)
 		dst[i] = be32dec(src + i * 4);
 }
 
-void quark_hash(const char* input, char* output)
+void x11_hash(const char* input, char* output)
 {
     sph_blake512_context     ctx_blake;
     sph_bmw512_context       ctx_bmw;
