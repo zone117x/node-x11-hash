@@ -3,7 +3,7 @@
 #include <v8.h>
 
 extern "C" {
-    #include "quark.h"
+    #include "x11.h"
 }
 
 using namespace node;
@@ -27,7 +27,7 @@ Handle<Value> Digest(const Arguments& args) {
     char * input = Buffer::Data(target);
     char * output = new char[32];
 
-    quark_hash(input, output);
+    x11_hash(input, output);
 
     Buffer* buff = Buffer::New(output, 32);
     return scope.Close(buff->handle_);
@@ -37,4 +37,4 @@ void init(Handle<Object> exports) {
     exports->Set(String::NewSymbol("digest"), FunctionTemplate::New(Digest)->GetFunction());
 }
 
-NODE_MODULE(quarkhash, init)
+NODE_MODULE(x11hash, init)
