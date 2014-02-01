@@ -27,7 +27,7 @@
  * online backup system.
  */
 
-#include "quark.h"
+#include "x11.h"
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
