@@ -1,0 +1,1 @@
+module.exports = require('bindings')('x11hash.node')

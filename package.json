@@ -1,0 +1,25 @@
+{
+    "name": "x11-hash",
+    "version": "0.0.1",
+    "main": "scrypthash",
+    "author": {
+        "name": "Steve Shit",
+        "email": "steveshit@yandex.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/steveshit/node-x11-hash.git"
+    },
+    "dependencies" : {
+        "bindings" : "*"
+    },
+    "keywords": [
+        "x11",
+        "darkcoin",
+        "drk",
+        "hash",
+        "256",
+        "crypto",
+        "cryptocurrency"
+    ]
+}
