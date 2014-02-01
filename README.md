@@ -16,7 +16,7 @@ Hash your data
     var x11 = require('x11-hash');
 
     var data = new Buffer("hash me good bro");
-    var hashed = quark.digest(data); //returns a 32 byte buffer
+    var hashed = x11.digest(data); //returns a 32 byte buffer
 
     console.log(hashed);
     //<SlowBuffer 0b de 16 ef 2d 92 e4 35 65 c6 6c d8 92 d9 66 b4 3d 65 ..... >
