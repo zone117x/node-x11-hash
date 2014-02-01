@@ -8,12 +8,12 @@ Usage
 
 Install
 
-    npm install x11-hash
+    ~
 
 
 Hash your data
 
-    var quark = require('x11-hash');
+    var x11 = require('x11-hash');
 
     var data = new Buffer("hash me good bro");
     var hashed = quark.digest(data); //returns a 32 byte buffer
