@@ -3,7 +3,7 @@
 #include <v8.h>
 
 extern "C" {
-    #include "x11.h"
+    #include "xcoin.h"
 }
 
 using namespace node;
@@ -27,7 +27,7 @@ Handle<Value> Digest(const Arguments& args) {
     char * input = Buffer::Data(target);
     char * output = new char[32];
 
-    x11_hash(input, output);
+    xcoin_hash(input, output);
 
     Buffer* buff = Buffer::New(output, 32);
     return scope.Close(buff->handle_);
