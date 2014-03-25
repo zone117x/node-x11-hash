@@ -1,14 +1,14 @@
 {
     "name": "x11-hash",
-    "version": "0.0.1",
-    "main": "scrypthash",
+    "version": "0.0.2",
+    "main": "x11hash",
     "author": {
-        "name": "Steve Shit",
-        "email": "steveshit@yandex.com"
+        "name": "Matthew Little",
+        "email": "zone117x@gmail.com"
     },
     "repository": {
         "type": "git",
-        "url": "http://github.com/steveshit/node-x11-hash.git"
+        "url": "https://github.com/zone117x/node-x11-hash.git"
     },
     "dependencies" : {
         "bindings" : "*"
@@ -16,6 +16,8 @@
     "keywords": [
         "x11",
         "darkcoin",
+        "hirocoin",
+        "xcoin",
         "drk",
         "hash",
         "256",
