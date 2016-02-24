@@ -1,7 +1,7 @@
 #include <nan.h>
 
 extern "C" {
-    #include "xcoin.h"
+    #include "x11.h"
 }
 
 NAN_METHOD(digest) {
@@ -18,9 +18,10 @@ NAN_METHOD(digest) {
     }
 
     char * input = node::Buffer::Data(target);
+    uint32_t input_len = node::Buffer::Length(target);
     char * output = new char[32];
 
-    xcoin_hash(input, output);
+    x11_hash(input, output, input_len);
 
     Nan::MaybeLocal<v8::Object> buffer = Nan::CopyBuffer(output, 32);
 
