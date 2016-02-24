@@ -2,6 +2,9 @@
     "name": "x11-hash",
     "version": "0.0.2",
     "main": "x11hash",
+    "scripts": {
+        "test": "node test/test.js"
+    },
     "author": {
         "name": "Matthew Little",
         "email": "zone117x@gmail.com"
