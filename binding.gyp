@@ -18,6 +18,9 @@
                 "sha3/shavite.c",
                 "sha3/simd.c",
                 "sha3/skein.c"
+            ],
+            "include_dirs" : [
+                "<!(node -e \"require('nan')\")"
             ]
         }
     ]

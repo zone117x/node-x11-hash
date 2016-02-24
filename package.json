@@ -11,7 +11,8 @@
         "url": "https://github.com/zone117x/node-x11-hash.git"
     },
     "dependencies" : {
-        "bindings" : "*"
+        "bindings" : "*",
+        "nan" : "*"
     },
     "keywords": [
         "x11",
