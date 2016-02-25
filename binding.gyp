@@ -4,8 +4,8 @@
             "target_name": "x11hash",
             "sources": [
                 "x11hash.cc",
-                "xcoin.c",
-                "xcoin.h",
+                "x11.c",
+                "x11.h",
                 "sha3/aes_helper.c",
                 "sha3/blake.c",
                 "sha3/bmw.c",
@@ -18,6 +18,9 @@
                 "sha3/shavite.c",
                 "sha3/simd.c",
                 "sha3/skein.c"
+            ],
+            "include_dirs" : [
+                "<!(node -e \"require('nan')\")"
             ]
         }
     ]

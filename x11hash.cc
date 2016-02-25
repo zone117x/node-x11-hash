@@ -1,40 +1,36 @@
-#include <node.h>
-#include <node_buffer.h>
-#include <v8.h>
+#include <nan.h>
 
 extern "C" {
-    #include "xcoin.h"
+    #include "x11.h"
 }
 
-using namespace node;
-using namespace v8;
+NAN_METHOD(digest) {
+    if (info.Length() != 1){
+        Nan::ThrowError("You must provide exactly one argument.");
+        return;
+    }
 
-Handle<Value> except(const char* msg) {
-    return ThrowException(Exception::Error(String::New(msg)));
-}
+    v8::Local<v8::Object> target = info[0]->ToObject();
 
-Handle<Value> Digest(const Arguments& args) {
-    HandleScope scope;
+    if(!node::Buffer::HasInstance(target)) {
+        Nan::ThrowError("Argument should be a buffer object.");
+        return;
+    }
 
-    if (args.Length() < 1)
-        return except("You must provide one argument.");
-
-    Local<Object> target = args[0]->ToObject();
-
-    if(!Buffer::HasInstance(target))
-        return except("Argument should be a buffer object.");
-
-    char * input = Buffer::Data(target);
+    char * input = node::Buffer::Data(target);
+    uint32_t input_len = node::Buffer::Length(target);
     char * output = new char[32];
 
-    xcoin_hash(input, output);
+    x11_hash(input, output, input_len);
 
-    Buffer* buff = Buffer::New(output, 32);
-    return scope.Close(buff->handle_);
+    Nan::MaybeLocal<v8::Object> buffer = Nan::CopyBuffer(output, 32);
+
+    delete []output;
+    info.GetReturnValue().Set(buffer.ToLocalChecked());
 }
 
-void init(Handle<Object> exports) {
-    exports->Set(String::NewSymbol("digest"), FunctionTemplate::New(Digest)->GetFunction());
+NAN_MODULE_INIT(init) {
+    NAN_EXPORT(target, digest);
 }
 
 NODE_MODULE(x11hash, init)

@@ -1,21 +1,32 @@
 {
     "name": "x11-hash",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "x11hash",
+    "scripts": {
+        "test": "node test/test.js"
+    },
     "author": {
         "name": "Matthew Little",
         "email": "zone117x@gmail.com"
     },
+    "contributors" : [
+        {
+            "name": "UdjinM6",
+            "email": "UdjinM6@gmail.com"
+        }
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/zone117x/node-x11-hash.git"
     },
     "dependencies" : {
-        "bindings" : "*"
+        "bindings" : "*",
+        "nan" : "*"
     },
     "keywords": [
         "x11",
         "darkcoin",
+        "dash",
         "hirocoin",
         "xcoin",
         "drk",
